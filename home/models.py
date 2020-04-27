@@ -1,6 +1,11 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 # Create your models here.
+from django.forms import ModelForm, TextInput, Textarea
+
+
+
 class Setting(models.Model):
     STATUS = (
         ('True', 'Evet'),
@@ -21,12 +26,42 @@ class Setting(models.Model):
     facebook = models.CharField(blank=True,max_length=50)
     instagram = models.CharField(blank=True,max_length=50)
     twitter = models.CharField(blank=True,max_length=50)
-    aboutus= models.TextField(blank=True)
-    contact = models.TextField(blank=True)
-    references = models.TextField(blank=True)
+    aboutus= RichTextUploadingField(blank=True)
+    contact =RichTextUploadingField(blank=True)
+    references =RichTextUploadingField(blank=True)
     status = models.CharField(max_length=10, choices=STATUS)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
+
+class ContactFormMessages(models.Model):
+    STATUS = (
+        ('New','New'),
+        ('Read','Read'),
+        ('Closed','Closed')
+    )
+    name=models.CharField(blank=True,max_length=20)
+    email= models.CharField(blank=True, max_length=50)
+    subject= models.CharField(blank=True, max_length=50)
+    message= models.CharField(blank=True, max_length=255)
+    status= models.CharField(max_length=20,choices=STATUS,default='New')
+    ip= models.CharField(blank=True, max_length=20)
+    note= models.CharField(blank=True, max_length=100)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+class ContactFormu(ModelForm):
+    class Meta:
+        model = ContactFormMessages
+        fields = ['name','email','subject','message']
+        widgets ={
+            'name': TextInput(attrs={'class': 'input', 'placeholder': 'Adı&Soyadı'}),
+            'subject': TextInput(attrs={'class': 'input', 'placeholder': 'Konu'}),
+            'email': TextInput(attrs={'class': 'input', 'placeholder': 'Email Adresi'}),
+            'message': Textarea(attrs={'class': 'input', 'placeholder': 'Mesajınız', 'rows': '5'}),
+        }

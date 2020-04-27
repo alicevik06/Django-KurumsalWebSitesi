@@ -1,0 +1,72 @@
+{% extends "homebase.html" %}
+
+{% block title %} İletisim-{{ setting.title }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% load static %}
+{% block head %}
+
+<link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}' />
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>İletişim</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+{% load static %}
+	<!-- Start About -->
+
+	<div class="about-section-box">
+
+        <div class="container">
+			<div class="row">
+                <div class="col-md-4">
+                    <div class="title">
+                        <h3>İletişim Formu</h3>
+                    </div>
+                <div class="form-group ">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <form action="" method="post">
+
+                        {% csrf_token %}
+                        {{ form.as_p }}
+
+                        <div class ="submit-button text-center">
+                            <input type="submit" value="Send Form">
+                         </div>
+
+                </form>
+
+                </div>
+                <div class="col-md-8">
+				{{ setting.contact|safe }}
+                </div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+
+{% endblock %}
+
+
+
+
+
