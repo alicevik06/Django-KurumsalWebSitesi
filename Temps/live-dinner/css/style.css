@@ -162,7 +162,7 @@ button:focus{
 }
 
 .top-navbar .navbar{
-	padding: 15px 0px;
+	padding: 15px 0px;      /*padding: 0px 0px (üst boşluk sıfırlamak için)*/     
 	position: fixed;
 	width: 100%;
 	border-radius: 0px 0px 100px 100px;
@@ -190,12 +190,14 @@ button:focus{
 	background: #d65106;
 	color: #ffffff;
 	border-radius: 4px;
+	width: %100;
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu{
 	border: none;
 	border-radius: 0px;
-	padding: 10px;
+	padding: 0px;
+	width:%100;
 	box-shadow: 2px 5px 6px rgba(0,0,0,0.5);
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu a{

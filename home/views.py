@@ -9,7 +9,7 @@ from duyuru.models import Duyuru,Category
 def index(request):
     setting = Setting.objects.get(pk=2)
     sliderData = Duyuru.objects.all()[:4]
-    category= Category.objects.all()
+    category = Category.objects.filter(status=True)
 
     context = {'setting': setting,
                'category': category,
@@ -19,7 +19,10 @@ def index(request):
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=2)
-    context = {'setting': setting}
+    category = Category.objects.filter(status=True)
+    context = {'setting': setting,
+              'category': category,
+              'page' : 'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
 def referanslar(request):
@@ -43,6 +46,23 @@ def iletisim(request):
             return HttpResponseRedirect('/iletisim')
 
     setting = Setting.objects.get(pk=2)
+    category = Category.objects.filter(status=True)
     form = ContactFormu()
-    context = {'setting': setting,'form':form}
+    context = {'setting': setting,
+               'form': form,
+               'category': category,
+               'page': 'iletisim'
+               }
     return render(request, 'iletisim.html', context)
+
+def category_duyurus(request, id, slug):
+    duyurus = Duyuru.objects.filter(category_id=id)
+    category = Category.objects.filter(status=True)
+    categorydata=Category.objects.get(pk=id)
+
+    context={'duyurus': duyurus,
+             'category': category,
+             'categorydata':categorydata
+
+             }
+    return render(request,'icerik.html', context)

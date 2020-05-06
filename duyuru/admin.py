@@ -16,8 +16,8 @@ class CategoryAdmin(MPTTModelAdmin):
     list_filter = ['status']
 
 class DuyuruAdmin(admin.ModelAdmin):
-    list_display = ['title','category', 'image_tag','status','update_at']
-    readonly_fields = ('image_tag',)
+    list_display = ['title','category',  'status','update_at',]
+    #readonly_fields = ('image_tag',)
     list_filter = ['status','category']
     inlines = [DuyuruImageInline]
 

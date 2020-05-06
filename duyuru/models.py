@@ -44,6 +44,14 @@ class Duyuru(models.Model):
     STATUS = (
         ('True','Evet'),
         ('False','Hayır'),
+
+    )
+    TYPE = (
+        ('haber','haber'),
+        ('duyuru','duyuru'),
+        ('etkinlik', 'etkinlik'),
+        ('menu', 'menu'),
+
     )
     category = models.ForeignKey(Category,on_delete=models.CASCADE) #Relation with Category Table
     title = models.CharField(max_length=200)
@@ -51,17 +59,17 @@ class Duyuru(models.Model):
     description = models.CharField(blank=True, max_length=500)
     image = models.ImageField(blank=True, upload_to='images/')
     detail = RichTextUploadingField()
+
     slug = models.SlugField(blank=True, max_length=200)
     status = models.CharField(max_length=10, choices=STATUS)
+    type = models.CharField(max_length=10, choices=TYPE)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
 
-    def image_tag(self):
-        return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
-    image_tag.short_description = 'Image'
+
 
 class Images(models.Model):
     duyuru=models.ForeignKey(Duyuru,on_delete=models.CASCADE)
