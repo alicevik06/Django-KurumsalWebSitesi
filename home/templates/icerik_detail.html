@@ -1,0 +1,179 @@
+    {% extends "homebase.html" %}
+
+    {% block title %} {{ duyuru.title }} {% endblock %}
+    {% block keywords %} {{ duyuru.keywords }} {% endblock %}
+    {% block description %} {{ duyuru.description }} {% endblock %}
+    {% load static %}
+    {% block head %}
+
+    <link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}' />
+
+    {% endblock %}
+
+
+    {% block content %}
+
+        <!-- Start All Pages -->
+        <div style="height: 20px;" class="all-page-title page-breadcrumb">
+            <div class="container ">
+                <div class="row">
+                    <div  class="col-lg-12">
+                        <a href="/category/{{ duyuru.category_id }}/{{ duyuru.category.slug }}"> <h4  style="color: white">{{ duyuru.category }}/</h4></a>
+                        <h4 style="color: white">{{ duyuru.title }}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End All Pages -->
+    {% load static %}
+        <!-- Start Detail -->
+        <div class="blog-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div style="background-color: #dcdcdc;" class="heading-title ">
+
+                            <h1>{{duyuru.title}}</h1>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-2 col-lg-2 col-12"></div>
+                    <div class="col-xl-8 col-lg-8 col-12">
+                        <div class="blog-inner-details-page">
+                            <div class="blog-inner-box">
+                                <div class="side-blog-img">
+                                    <img class="img-fluid" src="{{ duyuru.image.url }}" alt="">
+                                    <div class="date-blog-up">
+                                        {{ duyuru.create_at }}
+                                    </div>
+                                </div>
+                                <div class="inner-blog-detail details-page">
+                                    <h3>Duis feugiat neque sed dolor cursus, sed lacinia nisl pretium.</h3>
+                                    <ul>
+                                        <li><i class="zmdi zmdi-account"></i>Posted By : <span>Rubel Ahmed</span></li>
+                                        <li>|</li>
+                                        <li><i class="zmdi zmdi-time"></i>Time : <span>11.30 am</span></li>
+                                    </ul>
+
+
+                                    <blockquote>
+                                        <p>{{duyuru.detail|safe}}</p>
+                                    </blockquote>
+
+                                </div>
+                            </div>
+
+                            <div class="tz-gallery">
+                            <h3>{{duyuru.title}} galeri</h3>
+                    <hr>
+                    <div class="row">
+
+                        {% for rs in images %}
+
+                        <div class="col-sm-12 col-md-4 col-lg-4">
+                            <a class="lightbox" href="{{ rs.image.url }}">
+                                <img style="width: 200px;height: 200px;" class="img-fluid" src="{{ rs.image.url }}" alt="Gallery Images">
+                            </a>
+                        </div>
+
+                          {% endfor %}
+
+
+
+
+                    </div>
+                </div>
+
+                            <div class="blog-comment-box">
+                                <h3>Comments</h3>
+                                <div class="comment-item">
+                                    <div class="comment-item-left">
+                                        <img src="{% static 'images/avt-img.jpg'%}" alt="">
+                                    </div>
+                                    <div class="comment-item-right">
+                                        <div class="pull-left">
+                                            <a href="#">Rubel Ahmed</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>11.30 am</span>
+                                        </div>
+                                        <div class="des-l">
+                                            <p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
+                                        </div>
+                                        <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+                                    </div>
+                                </div>
+                                <div class="comment-item children">
+                                    <div class="comment-item-left">
+                                        <img src="{% static 'images/avt-img.jpg'%}" alt="">
+                                    </div>
+                                    <div class="comment-item-right">
+                                        <div class="pull-left">
+                                            <a href="#">Admin</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>1.30 pm</span>
+                                        </div>
+                                        <div class="des-l">
+                                            <p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
+                                        </div>
+                                        <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+                                    </div>
+                                </div>
+                                <div class="comment-item">
+                                    <div class="comment-item-left">
+                                        <img src="{% static 'images/avt-img.jpg'%}" alt="">
+                                    </div>
+                                    <div class="comment-item-right">
+                                        <div class="pull-left">
+                                            <a href="#">Rubel Ahmed</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>11.30 am</span>
+                                        </div>
+                                        <div class="des-l">
+                                            <p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
+                                        </div>
+                                        <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment-respond-box">
+                                <h3>Leave your comment </h3>
+                                <div class="comment-respond-form">
+                                    <form id="commentrespondform" class="comment-form-respond row" method="post">
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <input id="name_com" class="form-control" name="name" placeholder="Name" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <input id="email_com" class="form-control" name="email" placeholder="Your Email" type="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="textarea_com" placeholder="Your Message" rows="2"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <button class="btn btn-submit">Submit comment</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+        <!-- End Detail -->
+
+    {% endblock %}
+
+
+
+
+

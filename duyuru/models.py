@@ -50,6 +50,7 @@ class Duyuru(models.Model):
         ('haber','haber'),
         ('duyuru','duyuru'),
         ('etkinlik', 'etkinlik'),
+        ('inogrenci','inogrenci'),
         ('menu', 'menu'),
 
     )
@@ -63,7 +64,7 @@ class Duyuru(models.Model):
     slug = models.SlugField(blank=True, max_length=200)
     status = models.CharField(max_length=10, choices=STATUS)
     type = models.CharField(max_length=10, choices=TYPE)
-    create_at = models.DateTimeField(auto_now_add=True)
+    create_at = models.DateField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
