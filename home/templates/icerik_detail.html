@@ -90,78 +90,49 @@
 
                             <div class="blog-comment-box">
                                 <h3>Comments</h3>
+
+                                {% for rs in comments %}
                                 <div class="comment-item">
                                     <div class="comment-item-left">
-                                        <img src="{% static 'images/avt-img.jpg'%}" alt="">
+                                        <img src="{% static 'images/avt-img.png'%}" alt="">
                                     </div>
                                     <div class="comment-item-right">
                                         <div class="pull-left">
-                                            <a href="#">Rubel Ahmed</a>
+                                            <a href="#">{{rs.user.first_name}} {{ rs.user.last_name }}</a>
                                         </div>
                                         <div class="pull-right">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>11.30 am</span>
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>{{ rs.create_at }}</span>
                                         </div>
                                         <div class="des-l">
-                                            <p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
+                                            <p>{{rs.comment}}</p>
                                         </div>
-                                        <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+
                                     </div>
                                 </div>
-                                <div class="comment-item children">
-                                    <div class="comment-item-left">
-                                        <img src="{% static 'images/avt-img.jpg'%}" alt="">
-                                    </div>
-                                    <div class="comment-item-right">
-                                        <div class="pull-left">
-                                            <a href="#">Admin</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>1.30 pm</span>
-                                        </div>
-                                        <div class="des-l">
-                                            <p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
-                                        </div>
-                                        <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
-                                    </div>
-                                </div>
-                                <div class="comment-item">
-                                    <div class="comment-item-left">
-                                        <img src="{% static 'images/avt-img.jpg'%}" alt="">
-                                    </div>
-                                    <div class="comment-item-right">
-                                        <div class="pull-left">
-                                            <a href="#">Rubel Ahmed</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>11.30 am</span>
-                                        </div>
-                                        <div class="des-l">
-                                            <p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
-                                        </div>
-                                        <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
-                                    </div>
-                                </div>
+                                {% endfor %}
+
+
                             </div>
                             <div class="comment-respond-box">
                                 <h3>Leave your comment </h3>
                                 <div class="comment-respond-form">
-                                    <form id="commentrespondform" class="comment-form-respond row" method="post">
+                                    <form class="comment-form-respond row" action="/duyuru/addcomment/{{ duyuru.id }}" id="commentrespondform"   method="post">
+                                        {% csrf_token %}
                                         <div class="col-lg-6 col-md-6 col-sm-6">
                                             <div class="form-group">
-                                                <input id="name_com" class="form-control" name="name" placeholder="Name" type="text">
+                                                <input class="form-control" type="text" name="subject" id="id_subject"  placeholder="Subject" />
                                             </div>
                                             <div class="form-group">
-                                                <input id="email_com" class="form-control" name="email" placeholder="Your Email" type="email">
+                                                <textarea class="form-control" name="comment" id="id_comment" placeholder="Your review" rows="2"></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <div class="form-group">
-                                                <textarea class="form-control" id="textarea_com" placeholder="Your Message" rows="2"></textarea>
-                                            </div>
-                                        </div>
+                                        {% if user.id is not None %}
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <button class="btn btn-submit">Submit comment</button>
                                         </div>
+                                        {% else %}
+                                            Yorum Eklemek için login olunuz !!
+                                        {% endif %}
                                     </form>
                                 </div>
                             </div>

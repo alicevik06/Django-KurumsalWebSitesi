@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.models import Setting, ContactFormMessages, ContactFormu
-from duyuru.models import Duyuru, Category, Images
+from duyuru.models import Duyuru, Category, Images , Comment
 
 
 def index(request):
@@ -78,12 +78,16 @@ def category_duyurus(request, id, slug):
     return render(request,'icerik.html', context)
 
 def duyuru_detail(request,id,slug):
+    setting = Setting.objects.get(pk=2)
     category = Category.objects.filter(status=True)
     duyuru = Duyuru.objects.get(pk=id)
     images= Images.objects.filter(duyuru_id=id)[:3]
+    comments = Comment.objects.filter(duyuru_id=id,status=True)
     context = {'duyuru': duyuru,
                'category': category,
-               'images': images
+               'images': images,
+               'comments': comments,
+               'setting': setting
 
 
                }
