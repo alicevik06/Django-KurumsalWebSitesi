@@ -2,173 +2,25 @@
             <!-- Sidebar(kategori) başlangıç -->
 
 
-                    <div id="Anadiv">
+         <div style="height: 50px;" class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-4"></div>
 
-                        <div style="float: left;" class="container-fluid col-md-4 ">
+        <div style="margin-top: 20px;" class=" col-lg-4">
+            <h1 style="font-weight: bold" class="text-center">Arama Kutusu</h1>
+            <form action="/search/" method="post">
+                {% csrf_token %}
+                <div style="border: white;" class="blog-search-form">
+                <input name="query"  placeholder="Search " type="text">
+                    <button class="search-btn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
 
-
-                                     <div class="col-md-12 heading text-center"><h2 style="background-color: #ee7942; color: white;"><b>Duyurular</b></h2></div>
-                                    <a href="#" style="float: right ;color: #ee7942;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                                      <hr>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
-                                        <div  class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5 style="margin: auto">KARABÜK ÜNİVERSİTESİ 2019 YILI KURUM İÇ DEĞERLENDİRME RAPORU YAYIMLANMIŞTIR</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5  style="text-align: center;">Sürekli İşçi Alımı Kura Sonuçları</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card text-center" href="#">
-
-
-                                                <h5>BASIN AÇIKLAMASI (YENİ CORONA VİRÜSÜ (COVİD´19) HAKKINDA)</h5>
-
-
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5>Siz evde kalın biz yabancı dil kurslarını size getirelim.</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-
-
-                            </div>
-                        <div style="float: left;" class="container-fluid col-md-4">
-
-
-
-                                    <div class="col-md-12 heading text-center"><h2 style="background-color: #cd6839; color: white;"><b>Etkinlikler</b></h2></div>
-                                    <a href="#" style="float: right ;color: #cd6839;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                                    <hr>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
-                                        <div  class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5 style="margin: auto">KARABÜK ÜNİVERSİTESİ 2019 YILI KURUM İÇ DEĞERLENDİRME RAPORU YAYIMLANMIŞTIR</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5  style="text-align: center;">Sürekli İşçi Alımı Kura Sonuçları</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card text-center" href="#">
-
-
-                                                <h5>BASIN AÇIKLAMASI (YENİ CORONA VİRÜSÜ (COVİD´19) HAKKINDA)</h5>
-
-
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5>Siz evde kalın biz yabancı dil kurslarını size getirelim.</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-
-
-                        </div>
-                         <div style="float: left;" class="container-fluid col-md-4">
-
-
-
-                                    <div class="col-md-12 heading text-center"><h2 style="background-color: #8b4726; color: white;"><b>Uluslararası Öğrenciler</b></h2></div>
-                                    <a href="#" style="float: right ;color: #8b4726;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                                    <hr>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
-                                        <div  class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5 style="margin: auto">Devam eden Ara Sınavlar (Vize) Hakkında</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5  style="text-align: center;">Ait, Tur ve YDL Sınavları Hakkında</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card text-center" href="#">
-
-
-                                                <h5>Uzaktan Eğitime Erişim</h5>
-
-
-                                        </a>
-                                        </div>
-                                    </div>
-                                    <div style="margin-left: 10px; margin-right: auto;" class="col-md-10">
-                                        <div class="gallery-single fix">
-                                        <a class="fh5co-card" href="#">
-
-                                            <div class="fh5co-card-body text-center">
-                                                <h5>Siz evde kalın biz yabancı dil kurslarını size getirelim.</h5>
-
-                                            </div>
-                                        </a>
-                                        </div>
-                                    </div>
-
-
-                        </div>
-                    </div>
-
-            <hr>
-
-
+        <div class="col-lg-4"></div>
+    </div>
+</div>
 
                 <!-- End Menu -->

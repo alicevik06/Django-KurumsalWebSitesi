@@ -1,134 +1,136 @@
-     {% load static %}
-    <!-- Content(içerik) başlangıç -->
-        <div class="blog-box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="heading-title text-left">
-                            <h2>Haberler</h2>
-                            <a href="#" style="float: right ;color: black;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                            <hr style="size: 4px;">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
+         {% load static %}
+        <!-- Content(içerik) başlangıç -->
 
-                    {% for rs in anahaber %}
 
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <div style="width: 200px;height: 300px;" class="blog-box-inner">
-                            <div class="blog-img-box">
-                                <img style="width: 200px;height: 300px;" class="img-fluid" src="{% static 'images/arka-flu.jpg'%}" alt="">
-                            </div>
-                            <div class="blog-detail">
-                                <img style="height: 100px;width: 150px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}" >
-                                <ul>
-
-                                    <li>|</li>
-                                    <li><span>27 February 2018</span></li>
-                                </ul>
-                                <p> {{ rs.title }} </p>
-
-                                <a style="margin-bottom:4px ;" class="btn btn-lg btn-circle btn-outline-new-white" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">Detay</a>
+    <div class="blog-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="heading-title text-left">
+                                <h2>Haberler</h2>
+                                <a href="#" style="float: right ;color: black;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
+                                <hr style="size: 4px;">
                             </div>
                         </div>
                     </div>
+                    <div class="row">
 
-                    {% endfor %}
+                        {% for rs in anahaber %}
+
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div style="width: 200px;height: 300px;" class="blog-box-inner">
+                                <div class="blog-img-box">
+                                    <img style="width: 200px;height: 300px;" class="img-fluid" src="{% static 'images/arka-flu.jpg'%}" alt="">
+                                </div>
+                                <div class="blog-detail">
+                                    <img style="height: 100px;width: 150px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}" >
+                                    <ul>
+
+                                        <li>|</li>
+                                        <li style="font-size: 8pt;"><span>{{ rs.create_at }}</span></li>
+                                    </ul>
+                                    <p> {{ rs.title }} </p>
+
+                                    <a style="margin-bottom:4px ;" class="btn btn-lg btn-circle btn-outline-new-white" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">Detay</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
 
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--  Content(içerik) bitiş -->
+            <!--  Content(içerik) bitiş -->
 
-     {% load static %}
-                <!-- Sidebar(kategori) başlangıç -->
-
-
-                        <div id="Anadiv">
-
-                            <div style="float: left;" class="container-fluid col-md-4 ">
+         {% load static %}
+                    <!-- Sidebar(kategori) başlangıç -->
 
 
-                                         <div class="col-md-12 heading text-center"><h2 style="background-color: #ee7942; color: white;"><b>Duyurular</b></h2></div>
-                                        <a href="#" style="float: right ;color: #ee7942;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                                          <hr>
-                                {% for rs in anaduyuru %}
-                                        <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
-                                            <div  class="gallery-single fix">
-                                            <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+                            <div id="Anadiv">
 
-                                                <div class="fh5co-card-body text-center">
-                                                    <h5 style="margin: auto">{{ rs.title }}</h5>
+                                <div style="float: left;" class="container-fluid col-md-4 ">
 
+
+                                             <div class="col-md-12 heading text-center"><h2 style="background-color: #ee7942; color: white;"><b>Duyurular</b></h2></div>
+                                            <a href="#" style="float: right ;color: #ee7942;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
+                                              <hr>
+                                    {% for rs in anaduyuru %}
+                                            <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
+                                                <div  class="gallery-single fix">
+                                                <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+
+                                                    <div class="fh5co-card-body text-center">
+                                                        <h5 style="margin: auto">{{ rs.title }}</h5>
+
+                                                    </div>
+                                                </a>
                                                 </div>
-                                            </a>
-                                            </div>
 
-                                        </div>
-    {% endfor %}
+                                            </div>
+        {% endfor %}
+
+
+                                    </div>
+
+                                <div style="float: left;" class="container-fluid col-md-4">
+
+
+
+                                            <div class="col-md-12 heading text-center"><h2 style="background-color: #cd6839; color: white;"><b>Etkinlikler</b></h2></div>
+                                            <a href="#" style="float: right ;color: #cd6839;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
+                                            <hr>
+                                    {% for rs in anaetkinlik %}
+                                            <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
+                                                <div  class="gallery-single fix">
+                                                <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+
+                                                    <div class="fh5co-card-body text-center">
+                                                        <h5 style="margin: auto">{{ rs.title }}</h5>
+
+                                                    </div>
+                                                </a>
+                                                </div>
+                                            </div>
+                                    {% endfor %}
+
 
 
                                 </div>
-
-                            <div style="float: left;" class="container-fluid col-md-4">
-
+                                 <div style="float: left;" class="container-fluid col-md-4">
 
 
-                                        <div class="col-md-12 heading text-center"><h2 style="background-color: #cd6839; color: white;"><b>Etkinlikler</b></h2></div>
-                                        <a href="#" style="float: right ;color: #cd6839;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                                        <hr>
-                                {% for rs in anaetkinlik %}
-                                        <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
-                                            <div  class="gallery-single fix">
-                                            <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
 
-                                                <div class="fh5co-card-body text-center">
-                                                    <h5 style="margin: auto">{{ rs.title }}</h5>
+                                            <div class="col-md-12 heading text-center"><h2 style="background-color: #8b4726; color: white;"><b>Uluslararası Öğrenciler</b></h2></div>
+                                            <a href="#" style="float: right ;color: #8b4726;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
+                                            <hr>
+                                     {% for rs in anaulusal %}
+                                            <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
+                                                <div  class="gallery-single fix">
+                                                <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
 
+                                                    <div class="fh5co-card-body text-center">
+                                                        <h5 style="margin: auto">{{ rs.title }}</h5>
+
+                                                    </div>
+                                                </a>
                                                 </div>
-                                            </a>
                                             </div>
-                                        </div>
-                                {% endfor %}
+                                     {% endfor %}
 
 
 
+
+
+                                </div>
                             </div>
-                             <div style="float: left;" class="container-fluid col-md-4">
+
+                    <hr>
 
 
 
-                                        <div class="col-md-12 heading text-center"><h2 style="background-color: #8b4726; color: white;"><b>Uluslararası Öğrenciler</b></h2></div>
-                                        <a href="#" style="float: right ;color: #8b4726;">░▒▓█ 𝑻𝒖̈𝒎𝒖̈ █▓▒░</a>
-                                        <hr>
-                                 {% for rs in anaulusal %}
-                                        <div style="margin-left: 10px; margin-right: auto;" class="col-md-10 ">
-                                            <div  class="gallery-single fix">
-                                            <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
-
-                                                <div class="fh5co-card-body text-center">
-                                                    <h5 style="margin: auto">{{ rs.title }}</h5>
-
-                                                </div>
-                                            </a>
-                                            </div>
-                                        </div>
-                                 {% endfor %}
-
-
-
-
-
-                            </div>
-                        </div>
-
-                <hr>
-
-
-
-                    <!-- End Menu -->
+                        <!-- End Menu -->
 
 
 

@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from home.forms import SearchForm
 from home.models import Setting, ContactFormMessages, ContactFormu
 from duyuru.models import Duyuru, Category, Images , Comment
 
@@ -92,3 +93,17 @@ def duyuru_detail(request,id,slug):
 
                }
     return render(request,'icerik_detail.html',context)
+
+def duyuru_search(request):
+    if request.method == 'POST': #Eğer form POST edildi ise
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            category = Category.objects.filter(status=True)
+            query = form.cleaned_data['query'] #formdan bilgiyi al
+            duyurus = Duyuru.objects.filter(title__icontains=query) #Select * from duyuru where title like %query%
+            #return HttpResponse(duyurus)
+            context = {'duyurus': duyurus,
+                       'category': category,
+                       }
+            return render(request, 'icerik_search.html',context)
+    return HttpResponseRedirect('/')
