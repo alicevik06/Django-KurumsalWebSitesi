@@ -778,7 +778,8 @@ button:focus{
 -------------------------------------------------------------------*/
 
 .page-breadcrumb {
-    padding: 250px 0 150px;
+    padding: 150px 0px 150px;
+	margin-top: 0px;
     background: url(../images/kucuk-arka.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;

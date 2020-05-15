@@ -6,7 +6,7 @@ from django.shortcuts import render
 from home.forms import SearchForm
 from home.models import Setting, ContactFormMessages, ContactFormu
 from duyuru.models import Duyuru, Category, Images , Comment
-
+import json
 
 def index(request):
     setting = Setting.objects.get(pk=2)
@@ -106,4 +106,22 @@ def duyuru_search(request):
                        'category': category,
                        }
             return render(request, 'icerik_search.html',context)
+
     return HttpResponseRedirect('/')
+
+
+
+def duyuru_search_auto(request):
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        duyuru = Duyuru.objects.filter(title__icontains=q)
+        results = []
+        for rs in duyuru:
+            duyuru_json = {}
+            duyuru_json = rs.title
+            results.append(duyuru_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)

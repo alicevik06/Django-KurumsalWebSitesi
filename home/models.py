@@ -58,10 +58,10 @@ class ContactFormMessages(models.Model):
 class ContactFormu(ModelForm):
     class Meta:
         model = ContactFormMessages
-        fields = ['name','email','subject','message']
+        fields = ['name', 'email', 'subject', 'message']
         widgets ={
-            'name': TextInput(attrs={'class': 'input', 'placeholder': 'Adı&Soyadı'}),
-            'subject': TextInput(attrs={'class': 'input', 'placeholder': 'Konu'}),
-            'email': TextInput(attrs={'class': 'input', 'placeholder': 'Email Adresi'}),
-            'message': Textarea(attrs={'class': 'input', 'placeholder': 'Mesajınız', 'rows': '5'}),
+            'name': TextInput(attrs={'class': 'form-control', 'placeholder': 'Adı&Soyadı'}),
+            'subject': TextInput(attrs={'class': 'form-control', 'placeholder': 'Konu'}),
+            'email': TextInput(attrs={'class': 'form-control', 'placeholder': 'Email Adresi'}),
+            'message': Textarea(attrs={'class': 'form-control', 'placeholder': 'Mesajınız', 'rows': '5'}),
         }

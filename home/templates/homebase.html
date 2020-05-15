@@ -1,50 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <!-- Site Metas -->
-    <title>{% block title %} Django Kurumsal Sitesi {% endblock %}</title>
-    <meta name="keywords" content="{% block keywords %} Anasayfa Anahtar Kelimeler {% endblock %}">
-    <meta name="description" content="{% block description %} Anasayfa Kısa Açıklama {% endblock %}">
-    <meta name="author" content="">
+         <!-- Site Metas -->
+        <title>{% block title %} Django Kurumsal Sitesi {% endblock %}</title>
+        <meta name="keywords" content="{% block keywords %} Anasayfa Anahtar Kelimeler {% endblock %}">
+        <meta name="description" content="{% block description %} Anasayfa Kısa Açıklama {% endblock %}">
+        <meta name="author" content="">
 
-    {% load static %}
-    <!-- Site Icons -->
+        {% load static %}
+        <!-- Site Icons -->
 
-    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-	<!-- Site CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-     {% load static %}
-    <!--[if lt IE 9]>
-      <script src="{% static 'js/html5shiv.js' %}"></script>
-      <script src="{% static 'js/respond.min.js' %}"></script>
-    <![endif]-->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <!-- Site CSS -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+         {% load static %}
+        <!--[if lt IE 9]>
+          <script src="{% static 'js/html5shiv.js' %}"></script>
+          <script src="{% static 'js/respond.min.js' %}"></script>
+        <![endif]-->
+    <!-- jQuery !-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+    <!-- jQuery UI !-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
-    {% block head %}  {% endblock %}
-</head>
-<body>
-    {% include 'header.html' %}
+        {% block head %}  {% endblock %}
+    </head>
+    <body>
+        {% include 'header.html' %}
 
-    {% block slider %}   {% endblock %}
-    {% block sidebar %}   {% endblock %}
-    {% block content %}  {% endblock %}
+        {% block slider %}   {% endblock %}
+        {% block sidebar %}   {% endblock %}
+        {% block content %}  {% endblock %}
 
 
-    {% include 'footer.html' %}
+        {% include 'footer.html' %}
 
-    {% block foot %}  {% endblock %}
-</body>
+        {% block foot %}  {% endblock %}
+    </body>
 
-</html>
+    </html>
