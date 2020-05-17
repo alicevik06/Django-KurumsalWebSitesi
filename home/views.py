@@ -1,9 +1,10 @@
 from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from home.forms import SearchForm
+from home.forms import SearchForm, NewaccountForm
 from home.models import Setting, ContactFormMessages, ContactFormu
 from duyuru.models import Duyuru, Category, Images , Comment
 import json
@@ -125,3 +126,50 @@ def duyuru_search_auto(request):
         data = 'fail'
     mimetype = 'application/json'
     return HttpResponse(data, mimetype)
+
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
+def login_view(request):
+    if request.method == 'POST':  # Eğer form POST edildi ise
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # İşlem Başarılı ise
+            return HttpResponseRedirect('/')
+        else:
+            # İşlem Başarısız ise
+            messages.warning(request, "Login İşlemi Hatası! Kullanıcı Adı veya parola Hatalı")
+            return HttpResponseRedirect('/login')
+
+
+    category = Category.objects.filter(status=True)
+    context = {
+               'category': category,
+               }
+    return render(request, 'login.html', context)
+
+def new_account_view(request):
+    if request.method == 'POST':  # Eğer form POST edildi ise
+        form = NewaccountForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect('/')
+
+
+    form = NewaccountForm()
+    category = Category.objects.filter(status=True)
+    context = {
+                'category': category,
+                'form': form,
+              }
+    return render(request, 'New_account.html', context)

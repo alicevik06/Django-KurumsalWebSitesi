@@ -33,6 +33,9 @@ urlpatterns = [
     path('duyuru/<int:id>/<slug:slug>/', views.duyuru_detail, name='duyuru_detail'),
     path('search/', views.duyuru_search, name='duyuru_search'),
     path('search_auto/', views.duyuru_search_auto, name='duyuru_search_auto'),
+    path('logout/', views.logout_view, name='logout_view'),
+    path('login/', views.login_view, name='login_view'),
+    path('newaccount/', views.new_account_view, name='new_account_view'),
 
 ]
 if settings.DEBUG: # new
