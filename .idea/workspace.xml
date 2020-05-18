@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="116e531a-ec62-41e5-b58a-e0b1ab9e75f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proje1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/proje1/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proje1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/proje1/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,10 +57,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\proje1\user" />
       <recent name="C:\Django\proje1\home\templates" />
       <recent name="C:\Django\proje1\duyuru" />
     </key>
@@ -120,7 +125,7 @@
       <workItem from="1589163148918" duration="55000" />
       <workItem from="1589163225295" duration="13199000" />
       <workItem from="1589330059468" duration="24733000" />
-      <workItem from="1589634430292" duration="28453000" />
+      <workItem from="1589634430292" duration="39552000" />
     </task>
     <task id="LOCAL-00001" summary="Kategori - Slider - Form - Admin Panel güncellemeleri">
       <created>1588011055573</created>
@@ -178,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589682382366</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Üye profiline ek bilgiler ve profil resmi eklenmesi">
+      <created>1589757366515</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589757366515</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,17 +205,18 @@
     <MESSAGE value="Site içi arama paneli oluşturulması" />
     <MESSAGE value="Arama Paneli otomatik tamamlama ve otomatik slug oluşturulması" />
     <MESSAGE value="Üye girişi ve oturum kapatma işlemleri , Yeni üye kaydı oluşturulması" />
-    <option name="LAST_COMMIT_MESSAGE" value="Üye girişi ve oturum kapatma işlemleri , Yeni üye kaydı oluşturulması" />
+    <MESSAGE value="Üye profiline ek bilgiler ve profil resmi eklenmesi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Üye profiline ek bilgiler ve profil resmi eklenmesi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588516154963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588516154963" />
-    <state x="259" y="14" key="CommitChangelistDialog2" timestamp="1589682379472">
+    <state x="259" y="14" key="CommitChangelistDialog2" timestamp="1589757364520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="259" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589682379472" />
+    <state x="259" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589757364520" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1589162976389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
