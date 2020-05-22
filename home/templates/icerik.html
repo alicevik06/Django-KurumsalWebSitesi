@@ -28,39 +28,201 @@
 	</div>
 	<!-- End header -->
 {% load static %}
+
+    <!--Css Başlangıç-->
+         <style>
+                        #personel{
+                        width: 100%;
+                        font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica,
+                        sans-serif;
+                        border: 10px solid #808080;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        text-align: left;
+                        padding: 6px 6px 6px 12px;
+                        background: #C1DAD7;
+                        border-collapse: collapse;
+                        }
+
+                        #personel th{
+                            text-align: left;
+                            font-size: 12pt;
+                            color: #ee7942;
+                            padding: 3px 3px 3px 6px;
+
+                        }
+
+                        #personel td{
+
+                        text-align: left;
+                        font-size: 10pt;
+                        padding: 6px 6px 6px 12px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        }
+                        #personel tr{
+                        text-align: left;
+                        color: #112233;
+                        background: #fff;
+                        }
+                        #personel tr:hover{
+                        text-align: left;
+                        background:#cd6839;
+                        color:#fff;
+                        }
+                        </style>
+    <!--Css Bitiş-->
 	<!-- Start section -->
-	<div class="about-section-box">
+{% if anamenu %}
+    {% for rs in anamenu %}
+
+
+    <div class="about-section-box">
 		<div class="container">
 			<div class="row">
 
-                 {% for rs in duyurus %}
+                            <h1 class="text-center" style="font-weight: bold;">{{ rs.title }}</h1><br>
 
-                <div class="col-lg-3 col-md-6 col-12">
-					<div style="width: 220px;height: 300px;" class="blog-box-inner">
-						<div class="blog-img-box">
-							<img style="width: 220px;height: 300px;" class="img-fluid" src="{% static 'images/arka-flu.jpg'%}" alt="">
-						</div>
-						<div class="blog-detail">
-							<img style="height: 100px;width: 150px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}">
-							<ul>
-
-								<li>|</li>
-								<li style="font-size: 8pt;"><span>{{ rs.create_at }}</span></li>
-							</ul>
-							<p>{{ rs.title }}</p>
-
-							<a style="margin-bottom: 10px;" class="btn btn-lg btn-circle btn-outline-new-white" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">Detay</a>
-						</div>
-					</div>
-				</div>
-
-                {% endfor %}
-
+                   <br> <img src="{{ rs.image.url }}" ><br>
+				{{ rs.detail|safe }}
 			</div>
 		</div>
 	</div>
-	<!-- End section -->
 
+    {% endfor %}
+{% else %}
+    <div class="about-section-box">
+
+
+    <div style="float: left" class="col-md-4">
+                        <div class="title">
+                            <h3 class="text-center" style="font-weight: bold">DUYURULAR</h3>
+
+                            <hr style="border-color: #ee7942;border-width: 4px;">
+                        </div>
+
+
+
+                        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+
+                        {% for rs in anaduyuru %}
+
+                            <table id="personel">
+
+
+
+                           <tr>
+
+                                <th>
+                                    <img style="height: 75px;width: 112.5px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}">
+                                </th>
+                                <td>
+                                    <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+
+                                        <div class="fh5co-card-body text-center">
+                                            <h5 style="margin: auto;font-weight: bold">{{ rs.title }}</h5>
+
+                                        </div>
+                                    </a>
+                                    <h6 style="font-size: 6pt;color: darkorange;font-weight: bold;float: right">{{ rs.create_at }}</h6>
+                                </td>
+                            </tr>
+
+
+
+
+                             </table>
+                        {% endfor %}
+
+
+    </div>
+
+    <div style="float: left" class="col-md-4">
+                        <div class="title">
+                            <h3 class="text-center" style="font-weight: bold">ETKİNLİKLER</h3>
+                            <hr style="border-color: #ee7942;border-width: 4px;">
+                        </div>
+
+
+
+                        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+
+                        {% for rs in anaetkinlik %}
+
+                            <table id="personel">
+
+
+
+                           <tr>
+
+                                <th>
+                                    <img style="height: 75px;width: 112.5px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}">
+                                </th>
+                                <td>
+                                    <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+
+                                        <div class="fh5co-card-body text-center">
+                                            <h5 style="margin: auto;font-weight: bold">{{ rs.title }}</h5>
+
+                                        </div>
+                                    </a>
+                                    <h6 style="font-size: 6pt;color: darkorange;font-weight: bold;float: right">{{ rs.create_at }}</h6>
+                                </td>
+                            </tr>
+
+
+
+
+                             </table>
+                        {% endfor %}
+
+    </div>
+    <div style="float: left" class="col-md-4">
+                        <div class="title">
+                            <h3 class="text-center" style="font-weight: bold">HABERLER</h3>
+                            <hr style="border-color: #ee7942;border-width: 4px;">
+                        </div>
+
+
+
+                        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+
+                        {% for rs in anahaber %}
+
+                            <table id="personel">
+
+
+
+                           <tr>
+
+                                <th>
+                                    <img style="height: 75px;width: 112.5px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}">
+                                </th>
+                                <td>
+                                    <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+
+                                        <div class="fh5co-card-body text-center">
+                                            <h5 style="margin: auto;font-weight: bold">{{ rs.title }}</h5>
+
+                                        </div>
+                                    </a>
+                                    <h6 style="font-size: 6pt;color: darkorange;font-weight: bold;float: right">{{ rs.create_at }}</h6>
+                                </td>
+                            </tr>
+
+
+
+
+                             </table>
+                        {% endfor %}
+
+    </div>
+
+
+	</div>
+
+	<!-- End section -->
+{% endif %}
 {% endblock %}
 
 

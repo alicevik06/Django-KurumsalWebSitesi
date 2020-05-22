@@ -5,13 +5,13 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.forms import SearchForm, NewaccountForm
-from home.models import Setting, ContactFormMessages, ContactFormu
-from duyuru.models import Duyuru, Category, Images , Comment
+from home.models import Setting, ContactFormMessages, ContactFormu, UserProfile
+from duyuru.models import Duyuru, Category, Images, Comment
 import json
 
 def index(request):
     setting = Setting.objects.get(pk=2)
-    sliderData = Duyuru.objects.all()[:4]
+    sliderData = Duyuru.objects.filter(slidertick=True)[:4]
     category = Category.objects.filter(status=True)
     anahaber= Duyuru.objects.filter(type__contains='haber')[:4]
     anaduyuru = Duyuru.objects.filter(type__contains='duyuru')[:4]
@@ -71,10 +71,21 @@ def category_duyurus(request, id, slug):
     duyurus = Duyuru.objects.filter(category_id=id)
     category = Category.objects.filter(status=True)
     categorydata=Category.objects.get(pk=id)
-
+    anahaber = Duyuru.objects.filter(type__contains='haber', category_id=id)[:4]
+    anaduyuru = Duyuru.objects.filter(type__contains='duyuru', category_id=id)[:4]
+    anaetkinlik = Duyuru.objects.filter(type__contains='etkinlik', category_id=id)[:4]
+    anaulusal = Duyuru.objects.filter(type__contains='inogrenci', category_id=id)[:4]
+    anamenu = Duyuru.objects.filter(type__contains='menu', category_id=id)
+    images = Images.objects.filter(duyuru_id=id)[:3]
     context={'duyurus': duyurus,
              'category': category,
-             'categorydata':categorydata
+             'categorydata':categorydata,
+             'anahaber': anahaber,
+             'anaduyuru': anaduyuru,
+             'anaetkinlik': anaetkinlik,
+             'anaulusal': anaulusal,
+             'anamenu': anamenu,
+             'images': images,
 
              }
     return render(request,'icerik.html', context)
@@ -163,6 +174,13 @@ def new_account_view(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.image = "images/users/user-ico.png"
+            data.save()
+            messages.success(request, "Kullanıcı Başarılı bir şekilde oluşturuldu")
             return HttpResponseRedirect('/')
 
 
@@ -173,3 +191,6 @@ def new_account_view(request):
                 'form': form,
               }
     return render(request, 'New_account.html', context)
+
+
+

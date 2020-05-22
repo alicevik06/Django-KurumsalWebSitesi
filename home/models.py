@@ -70,7 +70,7 @@ class ContactFormu(ModelForm):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    ogrencino = models.IntegerField(blank=False, max_length=13)
+    ogrencino = models.CharField(null=True, max_length=13)
     phone = models.CharField(blank=True, max_length=20)
     address = models.CharField(blank=True, max_length=150)
     city = models.CharField(blank=True, max_length=20)

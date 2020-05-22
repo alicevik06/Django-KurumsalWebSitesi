@@ -87,9 +87,12 @@
                         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
 
                         <table id="personel">
-                        <tr>
-                        <th></th>
-                        <td><img  src="{{ profile.image.url }}"> </td>
+                        <tr style="background-color: white">
+                        <th>
+                            <a style="width: 200px;padding: 4px;" href="/user/update" class="btn btn-lg btn-circle btn-outline-new-white">Update Profile</a>
+                            <a style="width: 200px;padding: 4px;" href=/user/password" class="btn btn-lg btn-circle btn-outline-new-white">Change Password</a>
+                        </th>
+                        <td><img style="height: 300px;width: 200px;" src="{{ profile.image.url }}"> </td>
                         </tr>
                         <tr>
                             <th>Name</th>

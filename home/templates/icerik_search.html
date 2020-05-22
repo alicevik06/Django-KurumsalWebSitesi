@@ -76,32 +76,34 @@
         <!-- End header -->
     {% load static %}
         <!-- Start About -->
-        <div class="about-section-box">
+
             <div class="container">
                 <div class="row">
                     {% for rs in duyurus %}
-                    <div class="col-lg-3 col-md-6 col-12">
-                                <div style="width: 200px;height: 300px;" class="blog-box-inner">
+                    <div style="margin-top: 15px;" class="col-lg-3 col-md-6 col-12">
+                                <div style="width: 200px;height: 280px;" class="blog-box-inner">
                                     <div class="blog-img-box">
-                                        <img style="width: 200px;height: 300px;" class="img-fluid" src="{% static 'images/arka-flu.jpg'%}" alt="">
+                                        <img style="width: 200px;height: 300px;" class="img-fluid" src="{% static 'images/arka-flu.jpg'%}" >
                                     </div>
                                     <div class="blog-detail">
-                                        <a href="/duyuru/{{ rs.id }}/{{ rs.slug }}"><img style="height: 100px;width: 150px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}" ></a>
+                                        <a href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+                                            <img style="height: 100px;width: 150px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}" >
+                                        </a>
                                         <ul>
 
                                             <li>|</li>
                                             <li style="font-size: 8pt;"><span>{{rs.create_at}}</span></li>
                                         </ul>
-                                        <a style="color: black;" href="/duyuru/{{ rs.id }}/{{ rs.slug }}"> <p> {{ rs.title }} </p></a>
+                                        <a style="color: black;" href="/duyuru/{{ rs.id }}/{{ rs.slug }}"> <p><b>{{ rs.title }}</b>  </p></a>
 
-                                        <a style="margin-bottom:4px ;" class="btn btn-lg btn-circle btn-outline-new-white" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">Detay</a>
+
                                     </div>
                                 </div>
                             </div>
                     {% endfor %}
                 </div>
             </div>
-        </div>
+
         <!-- End About -->
 
     {% endblock %}

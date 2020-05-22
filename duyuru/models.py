@@ -58,7 +58,10 @@ class Duyuru(models.Model):
         ('etkinlik', 'etkinlik'),
         ('inogrenci','inogrenci'),
         ('menu', 'menu'),
-
+    )
+    SLIDERTICK = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
     )
     category = models.ForeignKey(Category,on_delete=models.CASCADE) #Relation with Category Table
     title = models.CharField(max_length=200)
@@ -70,6 +73,7 @@ class Duyuru(models.Model):
     slug = models.SlugField(null=False, unique=True)
     status = models.CharField(max_length=10, choices=STATUS)
     type = models.CharField(max_length=10, choices=TYPE)
+    slidertick = models.CharField(max_length=10, choices=SLIDERTICK,blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 

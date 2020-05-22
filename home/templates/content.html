@@ -18,22 +18,25 @@
                         {% for rs in anahaber %}
 
                         <div class="col-lg-3 col-md-6 col-12">
-                            <div style="width: 200px;height: 300px;" class="blog-box-inner">
+
+                                <div style="width: 200px;height: 280px;" class="blog-box-inner">
                                 <div class="blog-img-box">
                                     <img style="width: 200px;height: 300px;" class="img-fluid" src="{% static 'images/arka-flu.jpg'%}" alt="">
                                 </div>
-                                <div class="blog-detail">
+                                <a href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+                                    <div class="blog-detail">
                                     <img style="height: 100px;width: 150px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}" >
                                     <ul>
 
                                         <li>|</li>
                                         <li style="font-size: 8pt;"><span>{{ rs.create_at }}</span></li>
                                     </ul>
-                                    <p><b> {{ rs.title }}</b> </p>
+                                    <p style="color: black"><b> {{ rs.title }}</b> </p>
 
-                                    <a style="margin-bottom:4px ;" class="btn btn-lg btn-circle btn-outline-new-white" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">Detay</a>
-                                </div>
+
+                                </div></a>
                             </div>
+
                         </div>
 
                         {% endfor %}
