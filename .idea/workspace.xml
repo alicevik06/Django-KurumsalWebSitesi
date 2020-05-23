@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="116e531a-ec62-41e5-b58a-e0b1ab9e75f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/change_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duyuru/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/duyuru/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/icerik.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/icerik.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/New_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/New_account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/icerik_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/icerik_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/icerik_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/icerik_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
     </list>
@@ -40,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -61,10 +59,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\proje1\user\templates" />
       <recent name="C:\Django\proje1\user" />
       <recent name="C:\Django\proje1\home\templates" />
       <recent name="C:\Django\proje1\duyuru" />
@@ -129,7 +128,10 @@
       <workItem from="1589163148918" duration="55000" />
       <workItem from="1589163225295" duration="13199000" />
       <workItem from="1589330059468" duration="24733000" />
-      <workItem from="1589634430292" duration="84632000" />
+      <workItem from="1589634430292" duration="84943000" />
+      <workItem from="1590114915516" duration="101000" />
+      <workItem from="1590181858789" duration="8009000" />
+      <workItem from="1590237463247" duration="9526000" />
     </task>
     <task id="LOCAL-00001" summary="Kategori - Slider - Form - Admin Panel güncellemeleri">
       <created>1588011055573</created>
@@ -201,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589772209445</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Content , search , form düzenlemeleri tasarımda birtakım değişiklikler ve sliderde gözüken iceriğin filtrelenmesi">
+      <created>1590114670983</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590114670983</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,32 +227,33 @@
     <MESSAGE value="Üye girişi ve oturum kapatma işlemleri , Yeni üye kaydı oluşturulması" />
     <MESSAGE value="Üye profiline ek bilgiler ve profil resmi eklenmesi" />
     <MESSAGE value="My Account Sayfası ve üye bilgilerinin veri tabanından çekilmesi" />
-    <option name="LAST_COMMIT_MESSAGE" value="My Account Sayfası ve üye bilgilerinin veri tabanından çekilmesi" />
+    <MESSAGE value="Content , search , form düzenlemeleri tasarımda birtakım değişiklikler ve sliderde gözüken iceriğin filtrelenmesi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Content , search , form düzenlemeleri tasarımda birtakım değişiklikler ve sliderde gözüken iceriğin filtrelenmesi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588516154963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588516154963" />
-    <state x="259" y="14" key="CommitChangelistDialog2" timestamp="1589772207553">
+    <state x="259" y="14" key="CommitChangelistDialog2" timestamp="1590114667485">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="259" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589772207553" />
+    <state x="259" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590114667485" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1589162976389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1589162976389" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589634433464">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590237468301">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589634433464" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590237468301" />
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588011142255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588011142255" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589939888879">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590238594524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589939888879" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590238594524" />
   </component>
 </project>
