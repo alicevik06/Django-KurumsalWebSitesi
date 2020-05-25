@@ -1,0 +1,139 @@
+{% extends "homebase.html" %}
+
+{% block title %} My Comments {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% load static %}
+{% block head %}
+
+<link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}' />
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Yorumlarım</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+{% load static %}
+	<!-- Start About -->
+
+    <style>
+
+                        #personel{
+                        width: 100%;
+                        font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica,
+                        sans-serif;
+                        border: 15px solid #505050;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        text-align: left;
+                        padding: 6px 6px 6px 12px;
+                        background: #C1DAD7;
+                        border-collapse: collapse;
+                        }
+
+                        #personel th{
+                            text-align: left;
+                            font-size: 12pt;
+                            color: #ee7942;
+                            padding: 3px 3px 3px 6px;
+
+                        }
+
+                        #personel td{
+
+                        text-align: left;
+                        font-size: 10pt;
+                        padding: 6px 6px 6px 12px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        }
+                        #personel tr{
+                        text-align: left;
+                        color: #112233;
+                        background: #fff;
+                        }
+                        #personel tr:hover{
+                        text-align: left;
+                        background:#cd6839;
+                        color:#fff;
+                        }
+                        </style>
+
+	<div class="about-section-box">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+
+                        {% include "user_panel.html" %}
+
+                    </div>
+                    <div class="col-md-10">
+                        <div class="title">
+                            <h3 style="font-weight: bold">USER Comments</h3>
+                            <hr style="border-color: #ee7942;border-width: 4px;">
+                        </div>
+
+
+
+                        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+
+                    {% if messages %}
+                                 {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }}
+                                    </div>
+                                 {% endfor %}
+                            {% endif %}
+
+                        <table id="personel">
+
+                            <tr style="background-color: white">
+                                <th class="text-center"> İcerik </th>
+                                <th class="text-center"> Subject </th>
+                                <th class="text-center"> Comment </th>
+                                <th class="text-center"> Status </th>
+                                <th class="text-center"> Date </th>
+                                <th class="text-center"> Detail </th>
+                            </tr>
+
+                            {% for rs in comments %}
+
+                            <tr>
+                            <td style="font-size: 9pt;font-weight: bold;" class="text-center">
+                                <a href="/duyuru/{{ rs.duyuru_id }}/{{ rs.duyuru.slug }}">
+                                {{ rs.duyuru.title }}
+                                </a>
+                            </td>
+                            <td style="font-size: 9pt;font-weight: bold;" class="text-center">{{ rs.subject }}</td>
+                            <td style="font-size: 9pt;font-weight: bold;" class="text-center">{{ rs.comment }}</td>
+                            <td style="font-size: 9pt;font-weight: bold;" class="text-center">{{ rs.status }}</td>
+                            <td style="font-size: 9pt;font-weight: bold;" class="text-center">{{ rs.create_at}}</td>
+                            <td style="font-size: 9pt;font-weight: bold;" class="text-center">
+                                <a style="padding: 3px;" class="btn btn-lg btn-circle btn-outline-new-white" href="/user/deletecomment/{{ rs.id }}" onclick="return confirm('Silmek istediğinize Emin Misiniz?')"> Delete </a>
+                            </td>
+                            </tr>
+
+                            {% endfor %}
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About -->
+
+        {% endblock %}
+
