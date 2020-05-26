@@ -23,6 +23,14 @@
 </script>
 
 
+             {% if messages %}
+                                 {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }}
+                                    </div>
+                                 {% endfor %}
+                            {% endif %}
+
              <div style="height: 80px;" class="col-lg-12">
         <div class="row">
             <div class="col-lg-4"></div>

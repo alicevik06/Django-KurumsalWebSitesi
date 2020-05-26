@@ -1,0 +1,139 @@
+{% extends "homebase.html" %}
+
+{% block title %} Add Content {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% load static %}
+{% block head %}
+
+<link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}' />
+
+{% load static %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>User Profile</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+{% load static %}
+        <!-- Start blog details -->
+        <div class="about-section-box">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+
+                        {% include "user_panel.html" %}
+
+                    </div>
+
+                    <div class="col-md-10">
+                        <div class="title">
+                            <h3 style="font-weight: bold">USER ADDCOMMENT</h3>
+                            <hr style="border-color: #ee7942;border-width: 4px;">
+                        </div>
+
+                        <style>
+
+                        #personel{
+                        width: 100%;
+                        font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica,
+                        sans-serif;
+                        border: 20px solid #505050;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        text-align: left;
+                        padding: 6px 6px 6px 12px;
+                        background: #C1DAD7;
+                        border-collapse: collapse;
+                        }
+
+                        #personel th{
+                            text-align: left;
+                            font-size: 12pt;
+                            color: #ee7942;
+                            padding: 3px 3px 3px 6px;
+
+                        }
+
+                        #personel td{
+
+                        text-align: left;
+                        font-size: 10pt;
+                        padding: 6px 6px 6px 12px;
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 400;
+                        }
+                        #personel tr{
+                        text-align: left;
+                        color: #112233;
+                        background: #fff;
+                        }
+                        #personel tr:hover{
+                        text-align: left;
+
+                        color:black;
+                        }
+                        </style>
+
+                        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+
+                        <table id="personel">
+                        <tr style="background-color: white">
+                        <th>
+
+                        </th>
+                        <td></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                                <fieldset class="form-group" >
+
+                                                    {{ form.media}}
+                                                    {{ form.as_p }}
+
+                                                </fieldset>
+                                                    <div class="form-group">
+                                                        <button style="border-radius: 40px" class="btn btn-lg btn-circle btn-outline-new-white" type="submit">Save</button>
+                                                    </div>
+                                </form>
+                                 {% if messages %}
+                                 {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }}
+                                    </div>
+                                 {% endfor %}
+                            {% endif %}
+                            </td>
+                        </tr>
+
+
+                        </table>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About -->
+
+        {% endblock %}

@@ -1,3 +1,4 @@
+from ckeditor.widgets import CKEditorWidget
 from django.db import models
 
 # Create your models here.
@@ -7,7 +8,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
 from django.contrib.auth.models import User
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput, Select, FileInput
 
 
 class Category(MPTTModel):
@@ -46,24 +47,28 @@ class Category(MPTTModel):
     def get_absolute_url(self):
         return reverse('category_detail', kwargs={'slug': self.slug})
 
-class Duyuru(models.Model):
-    STATUS = (
-        ('True','Evet'),
-        ('False','Hayır'),
-
-    )
-    TYPE = (
-        ('haber','haber'),
-        ('duyuru','duyuru'),
-        ('etkinlik', 'etkinlik'),
-        ('inogrenci','inogrenci'),
-        ('menu', 'menu'),
-    )
-    SLIDERTICK = (
+STATUS = (
         ('True', 'Evet'),
         ('False', 'Hayır'),
-    )
-    category = models.ForeignKey(Category,on_delete=models.CASCADE) #Relation with Category Table
+
+)
+TYPE = (
+        ('haber', 'haber'),
+        ('duyuru', 'duyuru'),
+        ('etkinlik', 'etkinlik'),
+        ('inogrenci', 'inogrenci'),
+        ('menu', 'menu'),
+)
+SLIDERTICK = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+)
+
+
+class Duyuru(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True) #Relation with Category Table
     title = models.CharField(max_length=200)
     keywords = models.CharField(blank=True, max_length=255)
     description = models.CharField(blank=True, max_length=500)
@@ -119,3 +124,19 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['subject','comment']
+
+
+class ContentForm(ModelForm):
+    class Meta:
+        model = Duyuru
+        fields = ['type', 'title', 'slug', 'keywords', 'description', 'image', 'detail','category']
+        widgets = {
+                 'title': TextInput(attrs={'class': 'form-control', 'placeholder': 'title'}),
+                 'slug': TextInput(attrs={'class': 'form-control', 'placeholder': 'slug'}),
+                 'keywords': TextInput(attrs={'class': 'form-control', 'placeholder': 'keywords'}),
+                 'description': TextInput(attrs={'class': 'form-control', 'placeholder': 'description'}),
+                 'type': Select(attrs={'class': 'form-control', 'placeholder': 'type'},choices=TYPE),
+                 'image': FileInput(attrs={'class': 'form-control', 'placeholder': 'image'}),
+                 'detail': CKEditorWidget(), #Ckeditor Input
+                 'category': Select(attrs={'class': 'form-control', 'placeholder': 'category'}),
+        }

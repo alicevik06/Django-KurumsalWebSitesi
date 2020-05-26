@@ -1,0 +1,43 @@
+{% extends "homebase.html" %}
+
+{% block title %} Hakkımızda-{{ setting.title }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% load static %}
+{% block head %}
+
+<link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}' />
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Hakkımızda</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+{% load static %}
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+                <h1>İçerik Bulunamadı</h1>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+
+{% endblock %}
+
+
+
+
+

@@ -96,14 +96,14 @@ def duyuru_detail(request,id,slug):
     duyuru = Duyuru.objects.get(pk=id)
     images= Images.objects.filter(duyuru_id=id)[:3]
     comments = Comment.objects.filter(duyuru_id=id,status=True)
-    context = {'duyuru': duyuru,
+    context = {
+               'duyuru': duyuru,
                'category': category,
                'images': images,
                'comments': comments,
                'setting': setting
 
-
-               }
+                   }
     return render(request,'icerik_detail.html',context)
 
 def duyuru_search(request):
