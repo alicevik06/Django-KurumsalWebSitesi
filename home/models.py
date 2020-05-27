@@ -92,3 +92,20 @@ class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
         fields = ['ogrencino', 'phone', 'address', 'city', 'country', 'image']
+
+
+class SSS(models.Model):
+    STATUS = (
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
+    Snumber = models.IntegerField()
+    question = models.CharField(max_length=200)
+    answer = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.question
+

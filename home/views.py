@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from home.forms import SearchForm, NewaccountForm
-from home.models import Setting, ContactFormMessages, ContactFormu, UserProfile
+from home.models import Setting, ContactFormMessages, ContactFormu, UserProfile, SSS
 from duyuru.models import Duyuru, Category, Images, Comment
 import json
 
@@ -193,4 +193,11 @@ def new_account_view(request):
     return render(request, 'New_account.html', context)
 
 
-
+def sss(request):
+    category = Category.objects.filter(status=True)
+    sss = SSS.objects.all().order_by('Snumber')
+    context = {
+              'category': category,
+              'sss': sss,
+    }
+    return render(request, 'SSS.html', context)
