@@ -71,11 +71,11 @@ def category_duyurus(request, id, slug):
     duyurus = Duyuru.objects.filter(category_id=id)
     category = Category.objects.filter(status=True)
     categorydata=Category.objects.get(pk=id)
-    anahaber = Duyuru.objects.filter(type__contains='haber', category_id=id)[:4]
-    anaduyuru = Duyuru.objects.filter(type__contains='duyuru', category_id=id)[:4]
-    anaetkinlik = Duyuru.objects.filter(type__contains='etkinlik', category_id=id)[:4]
-    anaulusal = Duyuru.objects.filter(type__contains='inogrenci', category_id=id)[:4]
-    anamenu = Duyuru.objects.filter(type__contains='menu', category_id=id)
+    anahaber = Duyuru.objects.filter(type__contains='haber', category_id=id,status=True)[:4]
+    anaduyuru = Duyuru.objects.filter(type__contains='duyuru', category_id=id,status=True)[:4]
+    anaetkinlik = Duyuru.objects.filter(type__contains='etkinlik', category_id=id,status=True)[:4]
+    anaulusal = Duyuru.objects.filter(type__contains='inogrenci', category_id=id,status=True)[:4]
+    anamenu = Duyuru.objects.filter(type__contains='menu', category_id=id,status=True)
     images = Images.objects.filter(duyuru_id=id)[:3]
     context={'duyurus': duyurus,
              'category': category,

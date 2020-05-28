@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="116e531a-ec62-41e5-b58a-e0b1ab9e75f1" name="Default Changelist" comment="Tüm etkinlikler , haberler , duyurular ve uluslararası öğrenciler sayfalarının fonksiyonlarının ve urlnin oluşturulması">
-      <change afterPath="$PROJECT_DIR$/user/templates/content_gallery.html" afterDir="false" />
+    <list default="true" id="116e531a-ec62-41e5-b58a-e0b1ab9e75f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duyuru/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/duyuru/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_contents.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_contents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +128,7 @@
       <workItem from="1590344155140" duration="46134000" />
       <workItem from="1590587339844" duration="215000" />
       <workItem from="1590615891818" duration="10745000" />
-      <workItem from="1590667368741" duration="5796000" />
+      <workItem from="1590667368741" duration="11943000" />
     </task>
     <task id="LOCAL-00001" summary="Kategori - Slider - Form - Admin Panel güncellemeleri">
       <created>1588011055573</created>
@@ -245,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590626534164</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Üyenin içeriklere resim galerisi ekleme işlemleri">
+      <created>1590673588475</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1590673588475</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,17 +272,18 @@
     <MESSAGE value="Üye haber duyuru etkinlik ekleme ,  güncelleme ,  silme ve görüntülenme sayfa ve kodlamalarının gerçekleştirişmesi" />
     <MESSAGE value="Sıkça Sorulan sorular sayfası , fonksiyonları oluşturulması ve projeye adapte edilmesi" />
     <MESSAGE value="Tüm etkinlikler , haberler , duyurular ve uluslararası öğrenciler sayfalarının fonksiyonlarının ve urlnin oluşturulması" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tüm etkinlikler , haberler , duyurular ve uluslararası öğrenciler sayfalarının fonksiyonlarının ve urlnin oluşturulması" />
+    <MESSAGE value="Üyenin içeriklere resim galerisi ekleme işlemleri" />
+    <option name="LAST_COMMIT_MESSAGE" value="Üyenin içeriklere resim galerisi ekleme işlemleri" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588516154963">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588516154963" />
-    <state x="259" y="14" key="CommitChangelistDialog2" timestamp="1590673063202">
+    <state x="259" y="14" key="CommitChangelistDialog2" timestamp="1590693466054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="259" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590673063202" />
+    <state x="259" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590693466054" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1589162976389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -295,9 +300,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590458115250" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590528417652">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590675785940">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590528417652" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590675785940" />
   </component>
 </project>
