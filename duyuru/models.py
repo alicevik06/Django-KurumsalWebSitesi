@@ -100,6 +100,10 @@ class Images(models.Model):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
     image_tag.short_description = 'Image'
 
+class ContentImageForm(ModelForm):
+    class Meta:
+        model = Images
+        fields = ['title', 'image']
 
 class Comment(models.Model):
     STATUS = (
@@ -140,3 +144,4 @@ class ContentForm(ModelForm):
                  'detail': CKEditorWidget(), #Ckeditor Input
                  'category': Select(attrs={'class': 'form-control', 'placeholder': 'category'}),
         }
+
