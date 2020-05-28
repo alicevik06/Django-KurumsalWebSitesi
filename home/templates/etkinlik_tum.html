@@ -1,0 +1,128 @@
+{% extends "homebase.html" %}
+
+{% block title %} Tüm Etkinlikler  {% endblock %}
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }} {% endblock %}
+{% load static %}
+{% block head %}
+
+    <link rel="shortcut icon" type="image/x-icon" href='{{ setting.icon.url }}' />
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Start header -->
+    <div style="height: 20px;" class="all-page-title page-breadcrumb">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="heading-title text-left">
+                        <h2 style="color: white;">Tüm Etkinlikler </h2>
+                        <hr style="size: 4px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+    {% load static %}
+
+    <!--Css Başlangıç-->
+    <style>
+        #personel{
+            width: 100%;
+            font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica,
+            sans-serif;
+            border: 10px solid #808080;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 6px 6px 6px 12px;
+            background: #C1DAD7;
+            border-collapse: collapse;
+        }
+
+        #personel th{
+            text-align: left;
+            font-size: 12pt;
+            color: #ee7942;
+            padding: 3px 3px 3px 6px;
+
+        }
+
+        #personel td{
+
+            text-align: left;
+            font-size: 10pt;
+            padding: 6px 6px 6px 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        #personel tr{
+            text-align: left;
+            color: #112233;
+            background: #fff;
+        }
+        #personel tr:hover{
+            text-align: left;
+            background:#cd6839;
+            color:#fff;
+        }
+    </style>
+    <!--Css Bitiş-->
+    <!-- Start section -->
+
+    <div class="about-section-box">
+    <div class="row">
+        <div style="float: left" class="col-3"></div>
+        <div style="float: left" class="col-6">
+            <div class="title">
+                <h3 class="text-center" style="font-weight: bold">TÜM ETKİNLİKLER</h3>
+
+                <hr style="border-color: #ee7942;border-width: 4px;">
+            </div>
+
+
+
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+
+            {% for rs in anaetkinlik %}
+
+                <table id="personel">
+
+                    <tr>
+                        <th>
+                            <img style="height: 75px;width: 112.5px; margin-left: auto;margin-right: auto;margin-top: 0;" src="{{ rs.image.url }}">
+                        </th>
+                        <td>
+                            <a class="fh5co-card" href="/duyuru/{{ rs.id }}/{{ rs.slug }}">
+
+                                <div class="fh5co-card-body ">
+                                    <h5 style="margin: auto;font-weight: bold">{{ rs.title }}</h5>
+
+                                </div>
+                            </a>
+                            <h6 style="font-size: 6pt;color: darkorange;font-weight: bold;float: right">{{ rs.create_at }}</h6>
+                        </td>
+                    </tr>
+
+                </table>
+
+            {% endfor %}
+
+
+        </div>
+        <div style="float: left" class="col-3"></div>
+</div>
+    </div>
+
+    <!-- End section -->
+
+{% endblock %}
+
+
+
+
+

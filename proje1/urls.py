@@ -39,6 +39,10 @@ urlpatterns = [
     path('login/', views.login_view, name='login_view'),
     path('newaccount/', views.new_account_view, name='new_account_view'),
     path('SSS/', views.sss, name='sss'),
+    path('TumDuyuru/', views.tumduyuru, name='tumduyuru'),
+    path('TumEtkinlik/', views.tumetkinlik, name='tumetkinlik'),
+    path('TumHaber/', views.tumhaber, name='tumhaber'),
+    path('TumUlusal/', views.tumulusal, name='tumulusal'),
 ]
 if settings.DEBUG: # new
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

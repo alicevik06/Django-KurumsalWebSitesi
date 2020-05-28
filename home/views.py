@@ -201,3 +201,52 @@ def sss(request):
               'sss': sss,
     }
     return render(request, 'SSS.html', context)
+
+def sosyalmedya(request):
+    setting = Setting.objects.get(pk=2)
+    context = {
+            'setting': setting,
+    }
+    return render(request, 'footer.html', context)
+
+def tumduyuru(request):
+    anaduyuru = Duyuru.objects.filter(type__contains='duyuru')
+    category = Category.objects.filter(status=True)
+    context = {
+             'anaduyuru': anaduyuru,
+             'category': category,
+
+    }
+    return render(request, 'duyuru_tum.html', context)
+
+def tumetkinlik(request):
+    anaetkinlik = Duyuru.objects.filter(type__contains='etkinlik')
+    category = Category.objects.filter(status=True)
+    context = {
+             'anaetkinlik': anaetkinlik,
+             'category': category,
+
+    }
+    return render(request, 'etkinlik_tum.html', context)
+
+
+def tumhaber(request):
+    anahaber = Duyuru.objects.filter(type__contains='haber')
+    category = Category.objects.filter(status=True)
+    context = {
+        'anahaber': anahaber,
+        'category': category,
+
+    }
+    return render(request, 'haber_tum.html', context)
+
+
+def tumulusal(request):
+    anaulusal = Duyuru.objects.filter(type__contains='inogrenci')
+    category = Category.objects.filter(status=True)
+    context = {
+        'anaulusal': anaulusal,
+        'category': category,
+
+    }
+    return render(request, 'ulusal_tum.html', context)
